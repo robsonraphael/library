@@ -1,108 +1,54 @@
-import { Router, Request, Response } from "express";
-import { prisma } from "../database";
+//        User Services
+import {
+  userController,
+  getUser,
+  getAllUsers,
+  updateUser,
+  deleteUser,
+} from "../controller/userController";
 
+//        Book Services
+import {
+  bookController,
+  getBook,
+  getAllBooks,
+  updateBook,
+  deleteBook,
+} from "../controller/bookController";
+
+import { Router } from "express";
 export const router = Router();
 
-// Home Page
-router.get("/", (req: Request, res: Response) => {
-  res.status(200).json("Welcome to HomePage");
-});
+//          Section User
 
-// Create User
-router.post("/register", async (req: Request, res: Response) => {
-  const { name, password } = req.body;
+// Create (User)
+router.post("/register", userController);
 
-  if (!!name && !!password) {
-    const user = prisma.user
-      .create({
-        data: {
-          name,
-          password,
-        },
-      })
-      .then((user) => {
-        return res.status(202).json(user);
-      })
-      .catch((err) => {
-        return res.status(402).json(err);
-      });
-  } else {
-    return res.status(402).json("Error, Name or Password is invalid !!");
-  }
-});
+// Find All (User)
+router.get("/user/all", getAllUsers);
 
-// Create Book
-router.post("/add", async (req: Request, res: Response) => {
-  const { title, author, publisher }: any = req.body;
+// Find by ID (User)
+router.get("/user/:id", getUser);
 
-  const isValid: boolean = (function () {
-    if (!title || !author || !publisher) {
-      return false;
-    } else {
-      return true;
-    }
-  })();
+// Update (User)
+router.put("/user/update/:id", updateUser);
 
-  const addBook = (async function () {
-    if (!!isValid) {
-      const book = prisma.book
-        .create({
-          data: {
-            title,
-            author,
-            publisher,
-          },
-        })
-        .then((book) => {
-          return res.status(200).json(book);
-        })
-        .catch((err) => {
-          return res.status(400).json(err);
-        });
-    } else {
-      return res.status(400).json("Error, Dados inseridos são inválidos.");
-    }
-  })();
-});
+// Delete (User)
+router.delete("/user/delete/:id", deleteUser);
 
-// View All Books
-router.get("/table", async (req: Request, res: Response) => {
-  const allBooks = prisma.book
-    .findMany({
-      select: {
-        title: true,
-        author: true,
-        publisher: true,
-      },
-    })
-    .then((table) => {
-      return res.status(201).json(table);
-    })
-    .catch((err) => {
-      return res.status(401).json(err);
-    });
-});
+//            Section Book
 
-// View All Users
-router.get("/users", async (req: Request, res: Response) => {
-  const users = prisma.user
-    .findMany({})
-    .then((users) => {
-      return res.status(203).json(users);
-    })
-    .catch((err) => {
-      return res.status(403).json(err);
-    });
-});
+// Create (Book)
+router.post("/book/add", bookController);
 
-// View Tables
-router.get("/table", async (req: Request, res: Response) => {
-  const table = prisma.boxe
-    .findMany({})
-    .then((table) => {
-      return res.status(204).json(table);
-    })
-    .catch((err) => {
-      return res.status(404).json(err);
-    });
-});
+// Find all (Book)
+router.get("/book/search/all", getAllBooks);
+
+// Find by ID (Book)
+router.get("/book/search/:id", getBook);
+
+// Update (Book)
+router.put("/book/update/:id", updateBook);
+
+// Delete (Book)
+router.delete("/book/delete/:id", deleteBook);

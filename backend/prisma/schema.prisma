@@ -7,33 +7,34 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// User
+//        User
 model User {
   id       String   @id @default(cuid()) @map("_id")
   createAt DateTime @default(now())
   name     String
   password String
   boxes    Boxe[]
+
+  @@map("users")
 }
 
-// Book
+//         Book
 model Book {
   id        String   @id @default(cuid()) @map("_id")
   createAt  DateTime @default(now())
   title     String
   author    String
   publisher String
-  boxes     Boxe[]
 
   @@map("books")
 }
 
-// Boxe
+//          Boxe
 model Boxe {
   id       String   @id @default(cuid()) @map("_id")
   createAt DateTime @default(now())
-  books    Book     @relation(fields: [bookId], references: [id])
-  bookId   String
   user     User     @relation(fields: [userId], references: [id])
   userId   String
+
+  @@map("boxes")
 }
