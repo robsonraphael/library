@@ -4,15 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 
 const variants = {
-  open: { x:["-200%", "0%"], opacity: 1},
-  closed: { opacity: 0},
+  open: { x: ["-200%", "0%"], opacity: 1 },
+  closed: { opacity: 0 },
 };
 
 export const Header = () => {
   const [isActive, setIsActive] = useState(false);
   return (
     <>
-      <_Header animate={{y: [-100, 0], opacity:[0, 0.5, 1]}}>
+      <_Header animate={{ y: [-100, 0], opacity: [0, 0.5, 1] }}>
         <Wrap>
           <Logo>Library GHOST</Logo>
           <Navigation
@@ -31,7 +31,7 @@ export const Header = () => {
               <FontAwesomeIcon icon={faBars} />
             </SVG>
             <SVG active={isActive} size="2em">
-              <FontAwesomeIcon icon={faClose}/>
+              <FontAwesomeIcon icon={faClose} />
             </SVG>
           </Mobile>
         </Wrap>

@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { MediaQuery } from "../../style/global";
 
-export const _Main = styled.section`
-`;
+export const _Main = styled.section``;
 export const Wrap = styled.div`
-    padding: 20px;
+  padding: 20px;
 `;
 export const List = styled.ul`
   list-style: none;
@@ -15,15 +14,14 @@ export const List = styled.ul`
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  ${MediaQuery.Desktop}{
+  ${MediaQuery.Desktop} {
     justify-content: space-between;
   }
-
 `;
 export const Item = styled.li`
   padding: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  ${MediaQuery.Tablet}{
+  ${MediaQuery.Tablet} {
     border: none;
   }
 `;
@@ -33,7 +31,7 @@ export const Title = styled.h1`
   font-weight: 500;
   text-align: center;
   padding: 5px;
-  ${MediaQuery.Tablet}{
+  ${MediaQuery.Tablet} {
     font-size: 1.6em;
   }
 `;
@@ -44,7 +42,7 @@ export const Text = styled.p`
   letter-spacing: 0.3px;
   line-height: 24px;
 
-  ${MediaQuery.Tablet}{
+  ${MediaQuery.Tablet} {
     text-align: flex-start;
     width: 20em;
   }

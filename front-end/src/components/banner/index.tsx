@@ -3,7 +3,7 @@ import { Container, Wrap, Title, Text, Button } from "./styles";
 export const Banner = () => {
   return (
     <>
-      <Container animate={{opacity: [0, 0.7 , 1]}}>
+      <Container animate={{ opacity: [0, 0.7, 1] }}>
         <Wrap>
           <Title>Your Favorite Bookstore</Title>
           <Text>

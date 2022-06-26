@@ -1,14 +1,20 @@
-// Components
-import { Header } from "./components/header";
-import { Banner } from "./components/banner";
-import { Main } from "./components/main";
+import { Routes, Route } from "react-router-dom";
+
+// Pages
+import { Home } from "./pages/home";
+import { Login } from "./pages/login";
+import { Register } from "./pages/register";
+import { Books } from "./pages/books";
 
 function App() {
   return (
     <>
-      <Header />
-      <Banner />
-      <Main />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/book" element={<Books />} />
+      </Routes>
     </>
   );
 }

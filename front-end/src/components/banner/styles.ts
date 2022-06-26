@@ -32,10 +32,10 @@ export const Title = styled.h1`
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 
-  ${MediaQuery.Tablet}{
+  ${MediaQuery.Tablet} {
     font-size: 3.2em;
   }
-  ${MediaQuery.Desktop}{
+  ${MediaQuery.Desktop} {
     font-size: 3.5em;
   }
 `;
@@ -49,10 +49,10 @@ export const Text = styled.p`
   letter-spacing: 0.2px;
   line-height: 25px;
 
-  ${MediaQuery.Tablet}{
+  ${MediaQuery.Tablet} {
     font-size: 1.1em;
   }
-  ${MediaQuery.Desktop}{
+  ${MediaQuery.Desktop} {
     font-size: 1.2em;
     line-height: 30px;
   }
@@ -79,11 +79,11 @@ export const Button = styled.a`
   cursor: pointer;
   box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.3);
 
-  ${MediaQuery.Tablet}{
+  ${MediaQuery.Tablet} {
     width: 7.2em;
     height: 2.2em;
   }
-  ${MediaQuery.Desktop}{
+  ${MediaQuery.Desktop} {
     top: 55%;
     width: 7.3em;
     height: 2.3em;
