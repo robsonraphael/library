@@ -1,6 +1,11 @@
+import { Container, Wrap } from "./styles";
+
 export const Table = () => {
-    return (
-        <>
-        </>
-    )
-}
+  return (
+    <>
+      <Container>
+        <Wrap></Wrap>
+      </Container>
+    </>
+  );
+};

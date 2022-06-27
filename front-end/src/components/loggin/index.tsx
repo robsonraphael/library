@@ -17,7 +17,7 @@ export const Loggin = () => {
     <>
       <Container>
         <Wrap>
-          <Logo />
+          <Logo>Library GHOST</Logo>
           <Title>Welcome</Title>
           <Text>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, nam

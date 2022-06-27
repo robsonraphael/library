@@ -22,9 +22,9 @@ export const Header = () => {
           >
             <Link href="/">Home</Link>
             <Link href="#about">About Us</Link>
-            <Link href="#book">Books</Link>
-            <Link href="#login">Login</Link>
-            <Link href="#register">Register</Link>
+            <Link href="/book">Books</Link>
+            <Link href="/login">Login</Link>
+            <Link href="/register">Register</Link>
           </Navigation>
           <Mobile onClick={() => setIsActive(!isActive)}>
             <SVG active={!isActive} size="1.9em">

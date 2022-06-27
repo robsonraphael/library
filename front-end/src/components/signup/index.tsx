@@ -17,7 +17,7 @@ export const SignUp = () => {
     <>
       <Container>
         <Wrap>
-          <Logo />
+          <Logo>Library GHOST</Logo>
           <Title>Sign up</Title>
           <Text>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
