@@ -1,36 +1,42 @@
 import { prisma } from "../database";
 import { Request, Response } from "express";
-import { passwordValidator, nameValidator } from "../validation";
+import {
+  passwordValidator,
+  nameValidator,
+  emailValidator,
+} from "../validation";
 
 // Create User
 export const userController = async (req: Request, res: Response) => {
-  const { name, password }: any = req.body;
+  const { name, email, password }: any = req.body;
 
   if (
-    !!nameValidator.validate(name) &&
-    !!passwordValidator.validate(password)
+    nameValidator.validate(name) &&
+    passwordValidator.validate(password) &&
+    emailValidator.validate(email)
   ) {
-    const user: any = await prisma.user
+    const user = await prisma.user
       .create({
         data: {
           name,
+          email,
           password,
         },
       })
       .then((user) => {
-        res.json(user).status(200).end();
+        res.json("👨🏾 User as been created !").status(200).end();
       })
       .catch((err) => {
         res.status(400).json(err).end();
       });
   } else {
-    res.status(400).json("Error, name or password invalid !").end();
+    res.status(400).json("⚠️ Error, invalid field!").end();
   }
 };
 // Find by ID
 export const getUser = async (req: Request, res: Response) => {
-  const { id }: any = req.params;
-  const user: any = await prisma.user
+  const { id } = req.params;
+  const user = await prisma.user
     .findUnique({
       where: {
         id,
@@ -47,7 +53,7 @@ export const getUser = async (req: Request, res: Response) => {
       res.json(user).status(201).end();
     })
     .catch((err) => {
-      res.status(401).json("Error, user not found").end();
+      res.status(401).json("⚠️ Error, user not found").end();
     });
 };
 // Find All
@@ -70,11 +76,12 @@ export const getAllUsers = async (req: Request, res: Response) => {
 // Update
 export const updateUser = async (req: Request, res: Response) => {
   const { id }: any = req.params;
-  const { name, password }: any = req.body;
+  const { name, email, password }: any = req.body;
 
   if (
-    !!nameValidator.validate(name) &&
-    !!passwordValidator.validate(password)
+    nameValidator.validate(name) &&
+    passwordValidator.validate(password) &&
+    emailValidator.validate(email)
   ) {
     const user: any = await prisma.user
       .update({
@@ -83,17 +90,18 @@ export const updateUser = async (req: Request, res: Response) => {
         },
         data: {
           name,
+          email,
           password,
         },
       })
       .then((user) => {
-        res.json(user).status(203).end();
+        res.json("👨🏾 User updated").status(203).end();
       })
       .catch((err) => {
-        res.status(403).json("Error, User not found").end();
+        res.status(403).json("⚠️ Error, User not found").end();
       });
   } else {
-    res.status(301).json("Error, Name or Password invalid !");
+    res.status(301).json("⚠️ Error, invalid fields !");
   }
 };
 // Delete
@@ -110,6 +118,6 @@ export const deleteUser = async (req: Request, res: Response) => {
       res.json(user).status(204).end();
     })
     .catch((err) => {
-      res.status(404).json("Error, User not found").end();
+      res.status(404).json("⚠️ Error, User not found").end();
     });
 };

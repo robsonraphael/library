@@ -22,7 +22,7 @@ export const router = Router();
 //          Section User
 
 // Create (User)
-router.post("/register", userController);
+router.post("/user/register", userController);
 
 // Find All (User)
 router.get("/user/all", getAllUsers);
