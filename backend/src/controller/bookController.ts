@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 
 // Create Book
 export const bookController = async (req: Request, res: Response) => {
-  const { title, author, publisher } = req.body;
+  const { title, author, publisher } : any = req.body;
   if (title && author && publisher) {
     const book = await prisma.book
       .create({
@@ -49,7 +49,6 @@ export const getBook = async (req: Request, res: Response) => {
         title: true,
         author: true,
         publisher: true,
-        boxes: true,
       },
     })
     .then((book) => {

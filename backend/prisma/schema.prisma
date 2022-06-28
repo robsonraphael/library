@@ -14,7 +14,6 @@ model User {
   name     String
   email    String @unique
   password String
-  books    Book[]
 
   @@map("users")
 }
@@ -26,9 +25,6 @@ model Book {
   title     String
   author    String
   publisher String
-
-  pushBy     User   @relation(fields: [userIdPush], references: [id])
-  userIdPush String
 
   @@map("books")
 }

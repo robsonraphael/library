@@ -9,6 +9,7 @@ import {
 // Create User
 export const userController = async (req: Request, res: Response) => {
   const { name, email, password }: any = req.body;
+  console.log(name,email,password);
 
   if (
     nameValidator.validate(name) &&
@@ -46,7 +47,6 @@ export const getUser = async (req: Request, res: Response) => {
         createAt: true,
         name: true,
         password: true,
-        boxes: true,
       },
     })
     .then((user) => {
@@ -63,7 +63,6 @@ export const getAllUsers = async (req: Request, res: Response) => {
       select: {
         id: true,
         name: true,
-        boxes: true,
       },
     })
     .then((users) => {
