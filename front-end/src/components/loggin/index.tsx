@@ -1,7 +1,6 @@
 import {
   Container,
   Wrap,
-  Logo,
   Title,
   Text,
   Form,
@@ -9,6 +8,7 @@ import {
   Email,
   Password,
   Button,
+  Register,
   Link,
 } from "./styles";
 
@@ -17,7 +17,6 @@ export const Loggin = () => {
     <>
       <Container>
         <Wrap>
-          <Logo>Library GHOST</Logo>
           <Title>Welcome</Title>
           <Text>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum, nam
@@ -29,8 +28,9 @@ export const Loggin = () => {
             <Email />
             <Label>Password</Label>
             <Password />
-            <Button>Login</Button>
             <Link>Forget password</Link>
+            <Button>Login</Button>
+            <Register href="/register">Register</Register>
           </Form>
         </Wrap>
       </Container>

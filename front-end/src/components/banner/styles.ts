@@ -23,7 +23,7 @@ export const Wrap = styled.div`
 export const Title = styled.h1`
   font-family: "Oswald";
   font-weight: bold;
-  font-size: 3em;
+  font-size: 2.7em;
 
   background-image: linear-gradient(45deg, #f5f5f5, #cfcfcf);
   background-size: 100%;
@@ -43,7 +43,7 @@ export const Text = styled.p`
   padding: 2px;
   font-family: "Oswald";
   font-weight: medium;
-  font-size: 0.95em;
+  font-size: 0.90em;
   color: white;
   text-align: center;
   letter-spacing: 0.2px;

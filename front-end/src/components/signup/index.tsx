@@ -1,7 +1,8 @@
+import { useEffect } from "react";
+import { api } from "../../api";
 import {
   Container,
   Wrap,
-  Logo,
   Title,
   Text,
   Form,
@@ -9,15 +10,37 @@ import {
   Name,
   Email,
   Password,
+  Login,
   Button,
 } from "./styles";
 
 export const SignUp = () => {
+  const addUser = () => {
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+
+    useEffect(() => {
+      console.log(api)
+      console.log(name)
+      api
+        .post("/user/register", {
+          name,
+          email,
+          password,
+        })
+        .then((userStatus) => {
+          alert(userStatus);
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    });
+  };
   return (
     <>
       <Container>
         <Wrap>
-          <Logo>Library GHOST</Logo>
           <Title>Sign up</Title>
           <Text>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
@@ -25,12 +48,20 @@ export const SignUp = () => {
           </Text>
           <Form>
             <Label>Name</Label>
-            <Name />
+            <Name name="username" type={"text"} id="name" />
             <Label>Email</Label>
-            <Email />
+            <Email name="email" type={"email"} id="email" />
             <Label>Password</Label>
-            <Password />
-            <Button>Create account</Button>
+            <Password name="password" type={"password"} id="password" />
+            <Button
+              name="submit"
+              type={"submit"}
+              id="submit"
+              onClick={() => addUser}
+            >
+              Create account
+            </Button>
+            <Login href="/login">Login</Login>
           </Form>
         </Wrap>
       </Container>

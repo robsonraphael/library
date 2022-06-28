@@ -3,7 +3,7 @@ import { _Main, Wrap, List, Item, Title, Text } from "./styles";
 export const Main = () => {
   return (
     <>
-      <_Main>
+      <_Main animate={{ opacity: [0, 0.7, 1] }}>
         <Wrap>
           <List>
             <Item>

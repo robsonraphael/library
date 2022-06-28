@@ -1,12 +1,12 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { MediaQuery } from "../../style/global";
 
-export const _Main = styled.section``;
+export const _Main = styled(motion.section)``;
 export const Wrap = styled.div`
   padding: 20px;
 `;
 export const List = styled.ul`
-  list-style: none;
   display: grid;
   gap: 1.2rem;
   ${MediaQuery.Tablet} {

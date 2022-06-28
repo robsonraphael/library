@@ -10,6 +10,14 @@ export const GlobalStyle = createGlobalStyle`
     body {
         background-color: #f5f5f5;
     }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
 `
 
 export const MediaQuery = {

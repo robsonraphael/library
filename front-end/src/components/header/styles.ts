@@ -71,7 +71,6 @@ export const Navigation = styled(motion.nav)<NavType>`
 `;
 export const Link = styled.a`
   font-size: 1.2em;
-  text-decoration: none;
   color: #fff;
   padding: 2px;
   font-family: "Oswald";
