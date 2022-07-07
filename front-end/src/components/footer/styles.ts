@@ -1,16 +1,12 @@
 import styled from "styled-components";
-import { MediaQuery } from "../../style/global";
-
-interface TypeSocial {
-  color: string;
-}
+import { MediaQuery } from "../../style/mediaQuery";
 
 export const Container = styled.footer`
-  background-color: #181818;
+  background-color: ${(props) => props.theme.colors.foot};
 `;
 export const Wrap = styled.div`
   height: fit-content;
-  padding: 30px;
+  padding: 20px;
 
   display: flex;
   flex-wrap: wrap;
@@ -34,7 +30,7 @@ export const Item = styled.li`
   padding: 5px;
 
   &:nth-child(n + 2) {
-    border-top: 0.5px solid #101010;
+    border-top: 0.5px solid;
     border-radius: 1px;
   }
 
@@ -50,42 +46,39 @@ export const Item = styled.li`
   }
 `;
 export const Logo = styled.h3`
-  font-family: "Oswald";
   font-size: 1.4em;
   font-weight: bolder;
-  color: white;
+  color: ${(props) => props.theme.colors.background};
 
   ${MediaQuery.Desktop} {
     font-size: 1.6em;
   }
 `;
 export const Title = styled.h3`
-  font-family: "Oswald";
   font-size: 1.3em;
-  color: white;
-
+  color: ${(props) => props.theme.colors.background};
   ${MediaQuery.Desktop} {
     font-size: 1.5em;
   }
 `;
 export const Text = styled.p`
-  font-family: "Oswald";
   font-weight: lighter;
   letter-spacing: 0.2px;
   font-size: 0.9em;
   text-align: start;
-  color: whitesmoke;
+  color: ${(props) => props.theme.colors.background};
 `;
 export const Link = styled.a`
-  font-family: "Oswald";
   font-weight: medium;
   cursor: pointer;
   font-size: 1em;
   padding: 3px;
-  color: #ccc;
+  color: ${(props) => props.theme.colors.nav};
 `;
-export const LinkSocial = styled(Link)<TypeSocial>`
+export const LinkSocial = styled.a<{ color: string }>`
   color: ${(props) => props.color};
+  cursor: pointer;
+  padding: 3px;
   font-size: 1.5em;
 
   ${MediaQuery.Desktop} {
@@ -109,7 +102,12 @@ export const Email = styled.input`
   padding: 4px;
   outline: none;
   font-size: 0.8em;
-  font-family: "Oswald";
+  background-color: ${(props) => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.nav};
+
+  &::placeholder {
+    color: ${(props) => props.theme.colors.background};
+  }
 
   ${MediaQuery.Desktop} {
     width: 260px;
@@ -122,22 +120,17 @@ export const Email = styled.input`
 `;
 export const Button = styled.button`
   position: relative;
-  bottom: 34px;
-  left: 90px;
   font-size: 13px;
 
   background: none;
   border: none;
   cursor: pointer;
-  color: #15b;
+  color: rgb(30, 50, 300);
 
   ${MediaQuery.Desktop} {
     bottom: 53px;
     left: 200px;
     font-size: 15px;
-    background-color: ivory;
-    border-radius: 5px;
     padding: 5px;
-    color: black;
   }
 `;

@@ -1,14 +1,13 @@
-import { createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<{
+  theme: { colors: { background: string } };
+}>`
     *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-    }
-
-    body {
-        background-color: #f5f5f5;
+        font-family: Oswald, sans-serif;
     }
 
     ul {
@@ -18,10 +17,8 @@ export const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
     }
-`
 
-export const MediaQuery = {
-    "Mobile": "@media (min-width: 768px)",
-    "Tablet": "@media (min-width: 769px)",
-    "Desktop": "@media (min-width: 1024px)"
-}
+    body {
+        background-color: ${(props) => props.theme.colors.background};
+    }
+`;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { MediaQuery } from "../../style/global";
+import { MediaQuery } from "../../style/mediaQuery";
 
 export const Container = styled(motion.div)`
   background-image: url(/src/assets/library-banner.png);
@@ -21,11 +21,10 @@ export const Wrap = styled.div`
   align-items: center;
 `;
 export const Title = styled.h1`
-  font-family: "Oswald";
   font-weight: bold;
-  font-size: 2.7em;
+  font-size: 2.6em;
 
-  background-image: linear-gradient(45deg, #f5f5f5, #cfcfcf);
+  background-image: linear-gradient(120deg, #fff, #f5f5f5);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -33,27 +32,26 @@ export const Title = styled.h1`
   -moz-text-fill-color: transparent;
 
   ${MediaQuery.Tablet} {
-    font-size: 3.2em;
+    font-size: 2.8em;
   }
   ${MediaQuery.Desktop} {
-    font-size: 3.5em;
+    font-size: 3.2em;
   }
 `;
 export const Text = styled.p`
   padding: 2px;
-  font-family: "Oswald";
   font-weight: medium;
-  font-size: 0.90em;
+  font-size: 0.9em;
   color: white;
   text-align: center;
   letter-spacing: 0.2px;
   line-height: 25px;
 
   ${MediaQuery.Tablet} {
-    font-size: 1.1em;
+    font-size: 1em;
   }
   ${MediaQuery.Desktop} {
-    font-size: 1.2em;
+    font-size: 1.1em;
     line-height: 30px;
   }
 `;
@@ -62,7 +60,6 @@ export const Button = styled.a`
   align-items: center;
   justify-content: center;
 
-  font-family: "Oswald";
   font-weight: bold;
   font-size: 1.2em;
   color: white;
@@ -70,12 +67,11 @@ export const Button = styled.a`
   width: 7em;
   height: 2em;
 
-  background-color: blueviolet;
+  background-color: rgba(30, 60, 300);
   border: none;
   border-radius: 6px;
 
-  position: absolute;
-  top: calc(30px + 43%);
+  position: static;
   cursor: pointer;
   box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.3);
 
@@ -84,7 +80,6 @@ export const Button = styled.a`
     height: 2.2em;
   }
   ${MediaQuery.Desktop} {
-    top: 55%;
     width: 7.3em;
     height: 2.3em;
   }

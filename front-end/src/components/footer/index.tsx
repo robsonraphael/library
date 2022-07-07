@@ -13,13 +13,7 @@ import {
   Button,
 } from "./styles";
 
-import {
-  faFacebook,
-  faInstagram,
-  faLinkedin,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { GrFacebook, GrInstagram, GrLinkedin, GrTwitter } from "react-icons/gr";
 
 export const Footer = () => {
   return (
@@ -37,16 +31,16 @@ export const Footer = () => {
               </Text>
               <SocialMedia>
                 <LinkSocial href="#facebook" color="royalblue">
-                  <FontAwesomeIcon icon={faFacebook} />
+                  <GrFacebook />
                 </LinkSocial>
                 <LinkSocial href="#instagram" color="#7f1734">
-                  <FontAwesomeIcon icon={faInstagram} />
+                  <GrInstagram />
                 </LinkSocial>
                 <LinkSocial href="#Linkedin" color="#0072b1">
-                  <FontAwesomeIcon icon={faLinkedin} />
+                  <GrLinkedin />
                 </LinkSocial>
                 <LinkSocial href="#Twitter" color="#436b95">
-                  <FontAwesomeIcon icon={faTwitter} />
+                  <GrTwitter />
                 </LinkSocial>
               </SocialMedia>
             </Item>
@@ -70,7 +64,7 @@ export const Footer = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Similique, molestias sed quaerat consectetur.
               </Text>
-              <Email placeholder="Enter your email" type={Email}/>
+              <Email placeholder="Enter your email" type={Email} />
               <Button>Submit</Button>
             </Item>
           </List>

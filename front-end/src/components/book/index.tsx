@@ -4,7 +4,7 @@ export const Table = () => {
   return (
     <>
       <Container>
-        <Wrap></Wrap>
+        <Wrap> Books </Wrap>
       </Container>
     </>
   );

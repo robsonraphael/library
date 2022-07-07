@@ -16,7 +16,7 @@ export const Main = () => {
               </Text>
             </Item>
             <Item>
-              <Title>Service Plus</Title>
+              <Title>Plus Service</Title>
               <Text>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Suscipit ipsa voluptatibus natus itaque, cupiditate numquam
@@ -25,7 +25,7 @@ export const Main = () => {
               </Text>
             </Item>
             <Item>
-              <Title>First Cluster</Title>
+              <Title>Free Books</Title>
               <Text>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae
                 sequi eveniet earum doloribus facere at mollitia? Id, error
@@ -34,7 +34,7 @@ export const Main = () => {
               </Text>
             </Item>
             <Item>
-              <Title>Begin Book</Title>
+              <Title>For Community</Title>
               <Text>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Molestias, laborum nemo rem, minima, adipisci maiores ullam eius

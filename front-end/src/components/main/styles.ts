@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { MediaQuery } from "../../style/global";
+import { MediaQuery } from "../../style/mediaQuery";
 
 export const _Main = styled(motion.section)``;
 export const Wrap = styled.div`
@@ -20,16 +20,15 @@ export const List = styled.ul`
 `;
 export const Item = styled.li`
   padding: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  ${MediaQuery.Tablet} {
+  border-bottom: 1px solid ${MediaQuery.Tablet} {
     border: none;
   }
 `;
 export const Title = styled.h1`
   font-size: 1.5em;
-  font-family: "Oswald";
   font-weight: 500;
   text-align: center;
+  color: ${(props) => props.theme.colors.text};
   padding: 5px;
   ${MediaQuery.Tablet} {
     font-size: 1.6em;
@@ -38,9 +37,9 @@ export const Title = styled.h1`
 export const Text = styled.p`
   font-size: 0.9em;
   font-weight: lighter;
-  font-family: "Oswald";
   letter-spacing: 0.3px;
   line-height: 24px;
+  color: ${(props) => props.theme.colors.text};
 
   ${MediaQuery.Tablet} {
     text-align: flex-start;

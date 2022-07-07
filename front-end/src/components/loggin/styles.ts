@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.main``;
+export const Container = styled.section``;
 export const Wrap = styled.div`
   width: 100%;
   height: 100vh;
@@ -11,18 +11,19 @@ export const Wrap = styled.div`
   align-items: center;
 `;
 export const Title = styled.h1`
-  font-family: "Oswald";
   font-size: 2em;
   padding: 10px;
   letter-spacing: 0.2px;
+  color: ${props => props.theme.colors.text};
 `;
 export const Text = styled.p`
-  font-family: "Oswald";
   font-weight: lighter;
   font-size: 0.9em;
   text-align: center;
   padding: 5px;
   letter-spacing: 0.2px;
+  color: ${props => props.theme.colors.text};
+
 `;
 
 export const Form = styled.form`
@@ -36,10 +37,10 @@ export const Label = styled.label`
   display: flex;
   align-items: center;
 
-  font-family: "Oswald";
   font-size: 1em;
   padding-left: 5px;
   letter-spacing: 0.2px;
+  color: ${props => props.theme.colors.text};
 `;
 export const Email = styled.input`
   height: 3.5em;
@@ -50,7 +51,6 @@ export const Password = styled.input`
   width: 60vh;
 `;
 export const Button = styled.button`
-  font-family: "Oswald";
   font-size: 1em;
   font-weight: bold;
   color: white;
@@ -60,16 +60,15 @@ export const Button = styled.button`
   margin: 0 auto;
   border: none;
   border-radius: 6px;
-  background-color: #5818ac;
+  background-color: rgb(20, 50, 200);
   cursor: pointer;
   &:hover{
     transition: ease 0.25s;
-    background-color: #6f1ed9;
+    background-color: rgb(20, 20, 200);
     color: whitesmoke;
   }
 `;
 export const Register = styled.a`
-  font-family: "Oswald";
   font-weight: bold;
   font-size: 1em;
   color: white;
@@ -91,10 +90,9 @@ export const Register = styled.a`
   }
 `
 export const Link = styled.a`
-  font-family: "Oswald";
   font-size: 1em;
   font-weight: lighter;
-  color: #121a80;
+  color: royalblue;
   display: flex;
   justify-content: flex-end;
   padding: 0 5px;

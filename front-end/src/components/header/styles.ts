@@ -1,19 +1,21 @@
 import styled from "styled-components";
-import { MediaQuery } from "../../style/global";
 import { motion } from "framer-motion";
+import { MediaQuery } from "../../style/mediaQuery";
 
-type NavType = { active: boolean };
-type IconType = { active: boolean; size: string };
-
+// Header
 export const _Header = styled(motion.header)`
-  background-color: #fff;
+  background-color: ${(props) => props.theme.colors.background};
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 0.1em;
+  border-bottom-right-radius: 0.1em;
+  position: sticky;
+  top: 0;
   ${MediaQuery.Desktop} {
-    z-index: 5;
+    position: static;
   }
 `;
 export const Wrap = styled.div`
-  padding: 1rem;
+  padding: 0.7rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,19 +24,7 @@ export const Wrap = styled.div`
     height: 15vh;
   }
 `;
-export const Logo = styled.div`
-  background: linear-gradient(45deg, #5818ac, #3f18ac);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-
-  font-size: 1.5em;
-  font-weight: bolder;
-  font-family: "Oswald";
-`;
-export const Navigation = styled(motion.nav)<NavType>`
+export const Navigation = styled(motion.nav)<{ active: boolean }>`
   display: ${(props) => (props.active ? "flex" : "none")};
   flex-direction: column;
   align-items: center;
@@ -44,13 +34,13 @@ export const Navigation = styled(motion.nav)<NavType>`
 
   position: absolute;
   top: 80px;
-  z-index: 9999;
 
   width: 94vw;
   height: 100vw;
-  border: 2px solid rgba(54, 21, 65, 0.8);
+
+  border: 2px solid rgba(200, 200, 200);
   border-radius: 5px;
-  background-color: #f5f5f5;
+  background-color: ${(props) => props.theme.colors.nav};
 
   ${MediaQuery.Tablet} {
     height: 70vw;
@@ -71,9 +61,8 @@ export const Navigation = styled(motion.nav)<NavType>`
 `;
 export const Link = styled.a`
   font-size: 1.2em;
-  color: #fff;
+  color: ${(props) => props.theme.colors.text};
   padding: 2px;
-  font-family: "Oswald";
   font-weight: bold;
 
   display: flex;
@@ -83,28 +72,27 @@ export const Link = styled.a`
   width: 90%;
   height: 30%;
 
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 6px;
+  background-color: rgba(120, 120, 120);
+  border-radius: 4px;
 
   &:focus {
     transition: ease-in 0.15s;
-    background-color: rgba(54, 17, 89, 0.7);
+    background-color: rgba(50, 50, 300);
   }
 
   ${MediaQuery.Desktop} {
     font-size: 1em;
     padding: 0;
 
-    color: #000;
     background: none;
     width: fit-content;
 
     &:hover {
-      color: rgba(0, 0, 0, 0.6);
+      color: rgba(50, 60, 200);
     }
     &:focus {
       background: none;
-      color: rgba(54, 17, 89, 0.7);
+      color: rgba(20, 30, 200);
     }
   }
 `;
@@ -117,8 +105,13 @@ export const Mobile = styled.button`
     display: none;
   }
 `;
-export const SVG = styled.div<IconType>`
+export const Btn = styled(Mobile)`
+  ${MediaQuery.Desktop}{
+    display: flex;
+  }
+`
+
+export const Icon = styled.div<{ active: boolean }>`
   display: ${(props) => (props.active ? "flex" : "none")};
-  font-size: ${(props) => props.size};
-  color: rgba(0, 0, 0, 0.9);
+  color: ${props => props.theme.colors.text};
 `;
