@@ -119,18 +119,10 @@ export const Email = styled.input`
   }
 `;
 export const Button = styled.button`
-  position: relative;
-  font-size: 13px;
-
-  background: none;
+  font-size: 14px;
+  font-weight: bolder;
   border: none;
   cursor: pointer;
   color: rgb(30, 50, 300);
-
-  ${MediaQuery.Desktop} {
-    bottom: 53px;
-    left: 200px;
-    font-size: 15px;
-    padding: 5px;
-  }
+  background: none;
 `;

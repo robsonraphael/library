@@ -6,8 +6,6 @@ import { MediaQuery } from "../../style/mediaQuery";
 export const _Header = styled(motion.header)`
   background-color: ${(props) => props.theme.colors.background};
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  border-bottom-left-radius: 0.1em;
-  border-bottom-right-radius: 0.1em;
   position: sticky;
   top: 0;
   ${MediaQuery.Desktop} {
@@ -30,20 +28,20 @@ export const Navigation = styled(motion.nav)<{ active: boolean }>`
   align-items: center;
   justify-content: space-between;
   padding: 40px 0;
-  gap: 2rem;
+  gap: 1em;
 
   position: absolute;
-  top: 80px;
+  top: 69px;
+  left: 0px;
+  overflow-x: hidden;
 
-  width: 94vw;
-  height: 100vw;
+  width: 98vw;
+  height: 90vh;
 
-  border: 2px solid rgba(200, 200, 200);
-  border-radius: 5px;
   background-color: ${(props) => props.theme.colors.nav};
 
   ${MediaQuery.Tablet} {
-    height: 70vw;
+    width: 99vw;
   }
   ${MediaQuery.Desktop} {
     padding: 0;
@@ -55,7 +53,6 @@ export const Navigation = styled(motion.nav)<{ active: boolean }>`
 
     width: fit-content;
     height: fit-content;
-    border: none;
     background: none;
   }
 `;
@@ -69,15 +66,14 @@ export const Link = styled.a`
   align-items: center;
   justify-content: center;
 
-  width: 90%;
-  height: 30%;
+  width: 80%;
+  height: 4em;
 
   background-color: rgba(120, 120, 120);
   border-radius: 4px;
 
   &:focus {
-    transition: ease-in 0.15s;
-    background-color: rgba(50, 50, 300);
+    background-color: rgba(40, 30, 240);
   }
 
   ${MediaQuery.Desktop} {
@@ -86,6 +82,7 @@ export const Link = styled.a`
 
     background: none;
     width: fit-content;
+    transition: ease-in 0.2s;
 
     &:hover {
       color: rgba(50, 60, 200);
@@ -100,18 +97,16 @@ export const Mobile = styled.button`
   background: none;
   padding: 2px;
   border: none;
+  cursor: pointer;
+  color: ${props => props.theme.colors.text};
 
   ${MediaQuery.Desktop} {
     display: none;
   }
 `;
-export const Btn = styled(Mobile)`
-  ${MediaQuery.Desktop}{
+export const Btn = styled(Mobile)<{ hover?: string }>`
+  ${MediaQuery.Desktop} {
     display: flex;
   }
-`
 
-export const Icon = styled.div<{ active: boolean }>`
-  display: ${(props) => (props.active ? "flex" : "none")};
-  color: ${props => props.theme.colors.text};
 `;

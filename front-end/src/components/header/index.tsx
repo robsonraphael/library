@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { _Header, Navigation, Link, Wrap, Mobile, Icon, Btn } from "./styles";
+import { _Header, Navigation, Link, Wrap, Mobile, Btn } from "./styles";
 import { Logo } from "../logo";
 
 // Icons
@@ -31,21 +31,21 @@ export const Header = ({ click, isDark }: any) => {
             <Link href="/login">Login</Link>
             <Link href="/register">Register</Link>
             <Btn onClick={click}>
-              <Icon active={!isDark}>
-                <BsFillMoonFill size="2.2em" />
-              </Icon>
-              <Icon active={isDark}>
-                <BsFillSunFill size="2.2em" />
-              </Icon>
+              <BsFillMoonFill
+                display={!isDark ? "flex" : "none"}
+                size="2.2em"
+                color="rgb(100, 100, 100)"
+              />
+              <BsFillSunFill
+                display={isDark ? "flex" : "none"}
+                size="2.2em"
+                color="rgb(250, 250, 20)"
+              />
             </Btn>
           </Navigation>
           <Mobile onClick={() => setIsOpen(!isOpen)}>
-            <Icon active={!isOpen}>
-              <GoThreeBars size="2.2em" />
-            </Icon>
-            <Icon active={isOpen}>
-              <GoX size="2.2em" />
-            </Icon>
+            <GoThreeBars display={!isOpen ? "flex" : "none"} size="2.2em"/>
+            <GoX display={isOpen ? "flex" : "none"} size="2.2em"/>
           </Mobile>
         </Wrap>
       </_Header>
